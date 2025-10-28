@@ -1,0 +1,70 @@
+.wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: #fff;
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 24px auto 0;
+}
+
+.frame {
+  border: 1px solid #333;
+  border-radius: 2px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-inline: auto;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 14px;
+  color: #222;
+  font-weight: 500;
+}
+
+.active {
+  color: #f59e0b; 
+  font-weight: 700;
+}
+
+.cart {
+  text-decoration: none;
+  color: #111;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+
+@media (max-width: 640px) {
+  .nav { gap: 14px; }
+  .frame { padding: 8px 12px; }
+}
