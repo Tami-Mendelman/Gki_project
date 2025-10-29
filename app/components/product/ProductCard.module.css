@@ -1,11 +1,13 @@
 .card {
   background: #fff;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #fdfdfd;
   border-radius: 12px;
   padding: 12px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  text-align: center;
+
 }
 
 .thumb {
@@ -14,31 +16,25 @@
   aspect-ratio: 1 / 1;
 }
 
-.title {
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.25;
-}
-
-.desc {
-  font-size: 12px;
-  color: #6b7280;
-  height: 32px;
-  overflow: hidden;
-}
 
 .meta {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  font-size: 12px;
-  color: #4b5563;
+  font-size: 13px;
+  color: #333;
 }
 
-.price {
+.meta strong {
   font-weight: 700;
-  font-size: 16px;
+  margin-left: 4px;
 }
+
+
+.price {
+  font-size: 17px;
+  font-weight: bold;
+  color: #000;
+  margin-top: 6px;
+}
+
 
 .actions {
   display: flex;
@@ -48,25 +44,46 @@
 
 .btnPrimary {
   flex: 1;
-  background: #fa9a2d;
+  background: #f59e0b; 
   color: #fff;
   border: none;
-  border-radius: 10px;
-  padding: 8px 10px;
-  font-size: 14px;
+  border-radius: 6px;
+  padding: 10px 0;
+  font-size: 15px;
   cursor: pointer;
 }
-.btnPrimary:active { transform: translateY(1px); }
 
+.btnPrimary:active { transform: translateY(1px); }
 .btnWish {
-  border: 1px solid #d1d5db;
-  background: #fff;
-  border-radius: 10px;
-  padding: 8px 10px;
-  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .btnWishActive {
   border-color: #111827;
   background: #111827;
   color: #fff;
+}
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+}
+
+.title:hover {
+  text-decoration: underline;
+}
+.desc {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

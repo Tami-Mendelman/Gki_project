@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./ProductCard.module.css";
 import { useCart } from "../store/cart";
-import { useWishlist } from "@/app/store/wishlist"; 
+import { useWishlist } from "../../store/wishlist"; 
 
 
 type Product = {
@@ -25,8 +25,8 @@ export default function ProductCard({ p }: Props) {
       </Link>
 
       <Link href={`/product/${p.id}`} className={styles.title}>{p.title}</Link>
-      <div className={styles.desc} title={p.description}>{p.description}</div>
-      <div className={styles.meta}><span>Category:</span><strong>{p.category}</strong></div>
+      {/* <div className={styles.desc} title={p.description}>{p.description}</div> */}
+      <div className={styles.meta}><span></span><strong>{p.category}</strong></div>
       <div className={styles.price}>${p.price.toFixed(2)}</div>
 
       <div className={styles.actions}>
