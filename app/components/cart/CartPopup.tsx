@@ -9,6 +9,8 @@ export default function CartPopup() {
   const items = useCart((state) => state.items);
   const isOpen = useCart((state) => state.popupOpen);
   const closePopup = useCart((state) => state.closePopup);
+  const total = items.reduce((acc, item) => acc + item.price * item.qty, 0);
+
 
   if (!isOpen) return null;
 
@@ -34,6 +36,9 @@ export default function CartPopup() {
             ))
           )}
         </ul>
+<div className={styles.total}>
+  סה"כ לתשלום: ₪{total.toFixed(2)}
+</div>
 
         <div className={styles.footer}>
           <Link href="/checkout" className={styles.checkoutBtn}>

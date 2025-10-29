@@ -43,8 +43,7 @@ export default function HomePage() {
 
   return (
     <div className={styles.home}>
-      <div className={styles.hero}>
-       <img src="/logo.jpg" alt="Hero Image" className={styles.heroImage} />
+      <div className={styles.hero}>   
       </div>
 
       <h2 className={styles.title}>LATEST PRODUCTS</h2>
