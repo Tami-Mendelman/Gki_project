@@ -50,7 +50,7 @@ export default function CategoryPage() {
   return (
     <div>
       <h1 style={{ fontSize: 24, fontWeight: 700, marginBottom: 12 }}>
-        Category: {apiCategory}
+       
       </h1>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 12 }}>
         {data.map((p) => <ProductCard key={p.id} p={p} />)}

@@ -16,6 +16,8 @@ export default function ProductCard({ p }: Props) {
   const add = useCart((s) => s.add);
   const toggle = useWishlist((s) => s.toggle);
   const has = useWishlist((s) => s.has)(p.id);
+  const openPopup = useCart((s) => s.openPopup);
+
 
   return (
     
@@ -30,10 +32,13 @@ export default function ProductCard({ p }: Props) {
       <div className={styles.price}>${p.price.toFixed(2)}</div>
 
       <div className={styles.actions}>
-        <button
-          className={styles.btnPrimary}
-          onClick={() => add({ id: p.id, title: p.title, price: p.price, image: p.image }, 1)}
-        >
+     <button
+  className={styles.btnPrimary}
+  onClick={() => {
+    add({ id: p.id, title: p.title, price: p.price, image: p.image }, 1);
+    openPopup(); 
+  }}
+>
           Add to cart
         </button>
 
