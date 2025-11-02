@@ -20,7 +20,9 @@ export default function ProductPage() {
 
   const add = useCart((s) => s.add);
   const toggle = useWishlist((s) => s.toggle);
-  const has = useWishlist((s) => s.has)(Number(id)); // האם במועדפים
+const has = useWishlist((s) => s.has(Number(id)));
+
+
 
   useEffect(() => {
     let alive = true;
@@ -64,15 +66,16 @@ export default function ProductPage() {
           >
             Add to cart
           </button>
+<button
+  className={`${styles.btnGhost} ${has ? styles.btnWishActive : ""}`}
+  onClick={() => toggle({ id: p.id, title: p.title, price: p.price, image: p.image })}
+  aria-label={has ? "Remove from wishlist" : "Add to wishlist"}
+  title={has ? "Remove from wishlist" : "Add to wishlist"}
+  aria-pressed={has}
+>
+  {has ? "♥ " : "♡ "}
+</button>
 
-          <button
-            className={styles.btnGhost}
-            onClick={() => toggle({ id: p.id, title: p.title, price: p.price, image: p.image })}
-            aria-label={has ? "Remove from wishlist" : "Add to wishlist"}
-            title={has ? "Remove from wishlist" : "Add to wishlist"}
-          >
-            {has ? "♥ " : "♡ "}
-          </button>
 
           <button className={styles.btnGhost} onClick={() => history.back()}>
             Back

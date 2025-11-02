@@ -3,8 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./ProductCard.module.css";
 import { useCart } from "../store/cart";
-import { useWishlist } from "../../store/wishlist"; 
-
+import { useWishlist } from "../../store/wishlist";
 
 type Product = {
   id: number; title: string; price: number; description: string; category: string; image: string;
@@ -14,13 +13,11 @@ type Props = { p: Product };
 
 export default function ProductCard({ p }: Props) {
   const add = useCart((s) => s.add);
-  const toggle = useWishlist((s) => s.toggle);
-  const has = useWishlist((s) => s.has)(p.id);
   const openPopup = useCart((s) => s.openPopup);
-
+  const toggle = useWishlist((s) => s.toggle);
+  const has  = useWishlist((s) => s.has(p.id));
 
   return (
-    
     <div className={styles.card}>
       <Link href={`/product/${p.id}`} className={styles.thumb}>
         <Image src={p.image} alt={p.title} fill sizes="(max-width:768px) 50vw, 25vw" style={{ objectFit: "contain" }} />
@@ -32,13 +29,13 @@ export default function ProductCard({ p }: Props) {
       <div className={styles.price}>${p.price.toFixed(2)}</div>
 
       <div className={styles.actions}>
-     <button
-  className={styles.btnPrimary}
-  onClick={() => {
-    add({ id: p.id, title: p.title, price: p.price, image: p.image }, 1);
-    openPopup(); 
-  }}
->
+        <button
+          className={styles.btnPrimary}
+          onClick={() => {
+            add({ id: p.id, title: p.title, price: p.price, image: p.image }, 1);
+            openPopup();
+          }}
+        >
           Add to cart
         </button>
 
@@ -53,3 +50,4 @@ export default function ProductCard({ p }: Props) {
     </div>
   );
 }
+
