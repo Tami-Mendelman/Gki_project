@@ -67,7 +67,7 @@
   .wrap { grid-template-columns: 1fr; }
 }
 .btnWishActive {
-  background: #000;        /* ריבוע שחור */
-  color: #fff;             /* לבן בפנים (הלב) */
-  border: 1px solid #000;  /* גבול שחור */
+  background: #000;        
+  color: #fff;             
+  border: 1px solid #000;  
 }

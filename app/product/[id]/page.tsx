@@ -19,6 +19,7 @@ export default function ProductPage() {
   const [err, setErr] = useState<string | null>(null);
 
   const add = useCart((s) => s.add);
+  const openPopup = useCart((s) => s.openPopup);
   const toggle = useWishlist((s) => s.toggle);
 const has = useWishlist((s) => s.has(Number(id)));
 
@@ -60,12 +61,15 @@ const has = useWishlist((s) => s.has(Number(id)));
         <div className={styles.price}>${p.price.toFixed(2)}</div>
 
         <div className={styles.actions}>
-          <button
-            className={styles.btnPrimary}
-            onClick={() => add({ id: p.id, title: p.title, price: p.price, image: p.image }, 1)}
-          >
-            Add to cart
-          </button>
+       <button
+  className={styles.btnPrimary}
+  onClick={() => {
+    add({ id: p.id, title: p.title, price: p.price, image: p.image }, 1);
+    openPopup(); 
+  }}
+>
+  Add to cart
+</button>
 <button
   className={`${styles.btnGhost} ${has ? styles.btnWishActive : ""}`}
   onClick={() => toggle({ id: p.id, title: p.title, price: p.price, image: p.image })}
